@@ -8,8 +8,7 @@ interface IRequest {
 
 class CreateCategoryService {
     /**
-     * Recerbe uma interface de contrato
-     * @param categoriesRepository
+     * @param categoriesRepository repositório de cetegorias
      */
     constructor(private categoriesRepository: ICategoriesRepoistory) { };
 
