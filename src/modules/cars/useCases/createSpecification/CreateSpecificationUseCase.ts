@@ -1,11 +1,11 @@
-import { ISpecificationsRepository } from "../repositories/ISpecificationsRepository";
+import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
 
 interface IRequest {
     name: string;
     description: string;
 }
 
-class CreateCategoryService {
+class CreateSpecificationUseCase {
     /**
      * Inicializa no construtor o repositório de especificações
      * @param specificationRepository repositório de especificação
@@ -24,4 +24,4 @@ class CreateCategoryService {
 
 }
 
-export { CreateCategoryService };
+export { CreateSpecificationUseCase };

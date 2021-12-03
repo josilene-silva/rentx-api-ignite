@@ -1,5 +1,5 @@
-import { Category } from "../model/Category";
-import { ICategoriesRepoistory, ICreateCategoryDTO } from "./ICategoriesRepository";
+import { Category } from "../../model/Category";
+import { ICategoriesRepoistory, ICreateCategoryDTO } from "../ICategoriesRepository";
 
 // singleton
 
