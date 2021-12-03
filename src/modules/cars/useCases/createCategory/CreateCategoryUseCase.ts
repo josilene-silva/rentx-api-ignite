@@ -1,4 +1,4 @@
-import { ICategoriesRepoistory } from "../repositories/ICategoriesRepository";
+import { ICategoriesRepoistory } from "../../repositories/ICategoriesRepository";
 
 
 interface IRequest {
@@ -6,7 +6,7 @@ interface IRequest {
     description: string;
 }
 
-class CreateCategoryService {
+class CreateCategoryUseCase {
     /**
      * @param categoriesRepository repositório de cetegorias
      */
@@ -24,4 +24,4 @@ class CreateCategoryService {
     }
 }
 
-export { CreateCategoryService };
+export { CreateCategoryUseCase };

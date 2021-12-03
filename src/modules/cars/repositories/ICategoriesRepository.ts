@@ -11,7 +11,7 @@ interface ICreateCategoryDTO {
 
 interface ICategoriesRepoistory {
     findByName(name: string): Category;
-    list(): void;
+    list(): Category[];
     create({name, description}: ICreateCategoryDTO): void;
 }
 
