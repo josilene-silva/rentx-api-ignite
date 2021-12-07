@@ -4,7 +4,7 @@ import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 class CreateCategoryController {
     constructor(private createCategoryUseCase: CreateCategoryUseCase) { };
 
-    handle(request: Request, response: Response): Response {
+    async handle(request: Request, response: Response): Promise<Response> {
         const { name, description } = request.body;
 
         // O serviço pode receber qualquer um dos repositories
@@ -12,7 +12,7 @@ class CreateCategoryController {
         // presente no tipo do argumento do contructor do Service
         // const createCategoryService = new CreateCategoryService(categoriesRepository);
 
-        this.createCategoryUseCase.execute({ name, description });
+        await this.createCategoryUseCase.execute({ name, description });
 
         return response.status(201).send();
     }
