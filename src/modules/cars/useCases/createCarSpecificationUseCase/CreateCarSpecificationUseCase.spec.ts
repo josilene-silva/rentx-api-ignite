@@ -20,18 +20,18 @@ describe("Create car specification", () => {
     createCarUseCase = new CreateCarUseCase(carsRepositoryInMemory);
   });
 
-  it("shold be able to add a new specification to a now-existent car", async () => {
-    expect(async () => {
-      const car_id = "123";
-      const specifications_id = ["54789"];
-      await createCarSpecificationUseCase.execute({
+  it("should be able to add a new specification to a now-existent car", async () => {
+    const car_id = "123";
+    const specifications_id = ["54789"];
+    await expect(
+      createCarSpecificationUseCase.execute({
         car_id,
         specifications_id,
-      });
-    }).rejects.toBeInstanceOf(AppError);
+      })
+    ).rejects.toEqual(new AppError("Cars does not exists!"));
   });
 
-  it("shold be able to add a new specification to the car", async () => {
+  it("should be able to add a new specification to the car", async () => {
     const car = await createCarUseCase.execute({
       name: "Name Car",
       description: "Description car",
