@@ -3,6 +3,7 @@ import { ImportCategoryController } from "@modules/cars/useCases/importCategory/
 import { ListCategoriesController } from "@modules/cars/useCases/listCategories/ListCategoriesController";
 import { Router } from "express";
 import multer from "multer";
+import { ensureAdmin } from "../middlewares/ensureAdmin";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const categoriesRoutes = Router();
@@ -26,6 +27,8 @@ categoriesRoutes.get("/", listCategoriesController.handle);
 categoriesRoutes.post(
   "/import",
   upload.single("file"),
+  ensureAuthenticated,
+  ensureAdmin,
   importCategoryController.handle
 );
 
