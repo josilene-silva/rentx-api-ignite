@@ -35,14 +35,6 @@
         "no-shadow": "off",
         "no-useless-constructor": "off",
         "no-empty-function": "off",
-        "import-helpers/order-imports": [
-            "warn",
-            {
-                "newlinesBetween": "always",
-                "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
-                "alphabetize": { "order": "asc", "ignoreCase": true }
-            }
-        ],
         "import/extensions": [
             "error",
             "ignorePackages",
