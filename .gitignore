@@ -1,5 +1,7 @@
 .vscode
 dist
 node_modules
-tmp
+tmp/*
 coverage
+!tmp/.gitkeep
+ormconfig.json
