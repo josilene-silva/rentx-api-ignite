@@ -20,14 +20,14 @@ services:
     ports:
       - 6379:6379
 
-  app:
-    build: .
-    container_name: rentx
-    ports:
-      - 3000:3000
-    volumes:
-      - .:/usr/app
-    network_mode: host
+  # app:
+  #   build: .
+  #   container_name: rentx
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - .:/usr/app
+  #   network_mode: host
 
 volumes:
   pgdata:
