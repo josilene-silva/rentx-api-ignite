@@ -8,12 +8,15 @@ import createConnection from "@shared/infra/typeorm";
 import "@shared/container";
 import { AppError } from "@shared/errors/AppError";
 import { router } from "@shared/infra/http/routes";
+import rateLimiter from "@shared/infra/http/middlewares/rateLimiter";
 
 import upload from "@config/upload";
 import swaggerFile from "../../../swagger.json";
 
 createConnection();
 const app = express();
+
+app.use(rateLimiter);
 
 app.use(express.json());
 
